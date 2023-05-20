@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Menu</h1>
+<!--Begin col-->
+
+    {% for item in menu.menu %}
+    <p>
+
+        <div class="row">
+            <!--Begin col-->
+            <div class="column">
+               <h3>
+                   {{ item.name }}
+               </h3>
+               <p>
+                   {{ item.menu_item_description }}
+               </p>
+               <p>
+                   Price: ${{ item.price }}.00
+               </p>
+            </div>
+            <!--End col-->
+            <!--Begin col-->
+            <div class="column">
+               <img src="/restaurant/static/img/menu_items/{{item.name}}.jpg" alt="{{ item.name}}" width="400" 
+               height="266" />
+           </div>
+            <!--End col-->
+         </div>
+
+    </p>
+    {% endfor %}
+
+<!--End col-->
+{% endblock %}
