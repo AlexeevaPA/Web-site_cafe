@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section>
+  <article>
+    <h1>About Us</h1>
+    <!--Begin row-->
+    <div class="row">
+      <!--Begin col-->
+      <div class="column">
+        <p>
+          Based in Astana, Kazakhstan, Bon Appetit is a cafe of Heaven Kitchen Group,
+           which is specialized in the restaurant business. The cafe offers different 
+           types of desserts alerted according to the season's time.
+        </p>
+        <p>
+          Owners drew inspiration from European lovely small cafes where people go to 
+          take hot beverages with a sweet item during the coffee break or in the morning 
+          to start a day with good emotions.
+        </p>
+
+        <p>
+          The cafe has a rustic and relaxed atmosphere with moderate
+          prices, making it a popular place for a break at any time of the day.
+        </p>
+
+        <p>
+          Bon Appetit was opened in 2019, so it is quite a modern and stylish 
+          place, but at the same time calm and peaceful. That is why there are 
+          people from different generations comfortably spent time together. 
+        </p>
+      </div>
+      <!--End col-->
+
+      <!--Begin col-->
+      <div class="column">
+        <figure class="figure">
+          <img
+            src="{% static 'img/People_restaurant.jpg' %}"
+            alt="People restaurant"
+          />
+          <figcaption class="figure-caption">
+            
+          </figcaption>
+        </figure>
+      </div>
+      <!--End col-->
+    </div>
+    <!--End row-->
+  </article>
+</section>
+{% endblock %}

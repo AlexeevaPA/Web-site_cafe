@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section>
+  <article>
+    <h1>All Reservations</h1>
+    <!--Begin row-->
+    <div class="row">
+      <!--Begin col-->
+      <div class="column">
+        <div id="bookings">
+        </div>
+      </div>
+      <!--End col-->
+
+      <!--Begin col-->
+      <div class="column">
+      </div>
+      <!--End col-->
+    </div>
+    <!--End row-->
+
+
+
+
+  </article>
+</section>
+<script>
+  function formatTime(time) {
+    const ampm = time < 12 ? 'AM' : 'PM';
+    const t = time < 12 ? time : time > 12 ? time - 12 : time;
+    const label = `${t} ${ampm}`;
+    console.log(label);
+    return label
+  }
+
+  const data = JSON.parse('{{ bookings|safe }}')
+  let bookarray=''
+  for (let item in data){
+    bookarray = `<p>${data[item].fields.first_name} - ${formatTime(data[item].fields.reservation_slot)} - ${data[item].fields.reservation_date}</p>`+`${bookarray}`;
+  }
+  document.getElementById('bookings').innerHTML = bookarray
+</script>
+{% endblock %}
+
